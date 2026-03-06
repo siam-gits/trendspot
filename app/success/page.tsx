@@ -1,5 +1,6 @@
 "use client";
 
+import { Suspense } from "react";
 import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
@@ -8,7 +9,7 @@ import { CheckCircle, ShoppingBag, Home, Loader2, Package } from "lucide-react";
 import { syncOrderStatus } from "@/actions/orders";
 import { toast } from "sonner";
 
-export default function SuccessPage() {
+function SuccessContent() {
     const searchParams = useSearchParams();
     const sessionId = searchParams.get("session_id");
     const [status, setStatus] = useState<"loading" | "success" | "error">("loading");
@@ -134,5 +135,18 @@ export default function SuccessPage() {
                 </div>
             </div>
         </div>
+    );
+}
+
+export default function SuccessPage() {
+    return (
+        <Suspense fallback={
+            <div className="min-h-[calc(100vh-4rem)] flex flex-col items-center justify-center p-4">
+                <Loader2 className="w-10 h-10 animate-spin text-primary mb-4" />
+                <p className="text-muted-foreground animate-pulse">Loading...</p>
+            </div>
+        }>
+            <SuccessContent />
+        </Suspense>
     );
 }
