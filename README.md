@@ -118,35 +118,53 @@ Open [http://localhost:3000](http://localhost:3000)
 
 ```
 /app
-  /api/auth/[...nextauth]  # Auth.js handler
-  /api/register            # Registration endpoint
-  /products                # Products listing + [id] detail
-  /sign-in                 # Login page
-  /register                # Registration page
+  /api                     # API routes (auth, register, debug)
   /favorites               # Protected favorites page
+  /forgot-password         # Password recovery
+  /orders                  # Order history
+  /products                # Products listing + [id] detail
+  /register                # Registration page
+  /reset-password          # Password reset flow
+  /sign-in                 # Login page
   /success                 # Stripe success page
   layout.tsx               # Root layout
+  page.tsx                 # Homepage
+
+/actions
+  auth.ts                  # Auth Server Actions
+  cart.ts                  # Cart Server Actions
+  checkout.ts              # Stripe checkout Server Action
+  favorites.ts             # Favorites toggle Server Action
+  orders.ts                # Order history Actions
 
 /components
-  Header.tsx               # Sticky nav with cart badge
+  /ui                      # shadcn/ui components
+  CartInitializer.tsx      # Zustand cart hydrator
   CartSheet.tsx            # Slide-out cart drawer
+  Footer.tsx               # Global footer
+  Header.tsx               # Sticky nav with cart badge
+  HeroAnimation.tsx        # Framer motion animations
+  HomeHero.tsx             # Homepage hero section
+  LiveChat.tsx             # Chat widget
+  Logo.tsx                 # Site logo
+  ModeToggle.tsx           # Dark/light mode switch
   ProductCard.tsx          # Reusable product card
+  Providers.tsx            # Context Providers (Session/Theme)
   SkeletonCard.tsx         # Loading skeleton
-  Providers.tsx            # SessionProvider + Toaster
 
 /lib
   api.ts                   # dummyjson.com fetch helpers
   db.ts                    # MongoDB connection
+  utils.ts                 # Utility functions
 
 /models
-  User.ts                  # Mongoose user schema
+  Cart.ts                  # Cart Database Schema
+  Order.ts                 # Order Database Schema
+  User.ts                  # User Database Schema
+  VerificationToken.ts     # Password reset schema
 
 /store
   cartStore.ts             # Zustand cart with localStorage
-
-/actions
-  checkout.ts              # Stripe checkout server action
-  favorites.ts             # Favorites toggle server action
 
 auth.ts                    # Auth.js v5 config
 ```
