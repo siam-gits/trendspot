@@ -2,10 +2,13 @@
 
 > **Portfolio Demo Project** — A modern, full-stack e-commerce demo showcasing real-world Next.js development skills.
 
+🟢 **Live Demo:** [TrendSpot Store on Vercel](https://trendspotstore.vercel.app/) *(Check deployment status via Vercel)*
+
 [![Next.js](https://img.shields.io/badge/Next.js-15-black)](https://nextjs.org)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-blue)](https://typescriptlang.org)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-v4-06B6D4)](https://tailwindcss.com)
 [![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-47A248)](https://mongodb.com/atlas)
+[![Vercel](https://img.shields.io/badge/Vercel-Deployed-black?logo=vercel)](https://vercel.com/)
 
 ---
 
